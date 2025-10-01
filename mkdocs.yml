@@ -77,12 +77,12 @@ nav:
     - 博弈论: SecondYear_2/GameTheory.md
   - 大三上学期:
     - 操作系统: ThirdYear_1/OperatingSystems.md
-    - 数值计算: ThirdYear_1/NumericalMethods.md
-    - 数字信号处理: ThirdYear_1/DigitalSignalProcessing.md
-    - 机器学习: ThirdYear_1/MachineLearning.md
     - 数据库系统: ThirdYear_1/DatabaseSystems.md
     - 计算机网络: ThirdYear_1/ComputerNetworks.md
+    - 数值计算: ThirdYear_1/NumericalMethods.md
+    - 机器学习: ThirdYear_1/MachineLearning.md
     - 人机交互设计: ThirdYear_1/HCI.md
+    - 数字信号处理: ThirdYear_1/DigitalSignalProcessing.md
   - 大三下学期:
     - 智能机器人: ThirdYear_2/Robotics.md
   - 科研&升学:
