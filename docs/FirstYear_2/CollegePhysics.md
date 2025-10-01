@@ -30,6 +30,9 @@ Q：大学物理在cs/ai专业里面可能用到的地方？
 1. **蜂考物理**：[链接](https://space.bilibili.com/176932693?spm_id_from=333.337.search-card.all.click)。如果是零基础同学，建议考前先看这个。讲解的也基本上是主流的考点。~~比较适合抱佛脚~~。
 2. **清华物理题库**：题目内容难度适中，和考试的贴近度高（~~大量原题出现~~），题目数量合适，是期末复习的好选择。复习的时候建议一边看答案一遍总结方法，这样效率比较高。[下载链接](https://hf-mirror.com/cuikq/aicompass_repo/resolve/main/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E4%BC%98%E8%B4%A8%E9%A2%98%E5%BA%93.zip?download=true)
 
+### 1. 超优质题库（推荐）
+题目内容难度适中，和考试的贴近度高，题目数量合适，是期末复习的好选择
+[下载链接](https://365.kdocs.cn/folder/chrQ1XGa8RWz)
 ```text
 📁 题库目录如下  
 ├── 磁学练习.pdf  
@@ -42,7 +45,6 @@ Q：大学物理在cs/ai专业里面可能用到的地方？
 ├── 热学练习.pdf  
 └── 相对论练习.pdf  
 ```
-
 ## 应试
 
 1. 往年题目参考 [下载链接](https://hf-mirror.com/cuikq/aicompass_repo/resolve/main/%E5%A4%A7%E4%B8%80%E7%89%A9%E7%90%86%E4%B8%8B%E5%AD%A6%E6%9C%9F%E5%BE%80%E5%B9%B4%E7%9C%9F%E9%A2%98.zip?download=true)
