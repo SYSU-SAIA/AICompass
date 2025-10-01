@@ -18,7 +18,7 @@ hide:
 <div class="main-content">
     <div class="section-title">
         <h2>课程资源汇总</h2>
-        <p>按学期汇总各个课程资源</p>
+        <p>!竖屏打开时：点开左上角‘三条横线’进入目录</p>
     </div>
 
 <div class="course-navigation">
