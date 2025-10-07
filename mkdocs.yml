@@ -51,14 +51,15 @@ nav:
     - 贡献指南: ContributionGuidelines.md
     - 致谢&友链: important-source.md
   - 大一上学期:
+    - 程序设计I: FirstYear_1/Programming.md
     - 高等数学I: FirstYear_1/Calculus.md
     - 线性代数: FirstYear_1/LinearAlgebra.md
     - 大学物理上: FirstYear_1/CollegePhysics.md
-    - 程序设计I: FirstYear_1/Programming.md
+
   - 大一下学期:
+    - 程序设计II: FirstYear_2/Programming.md
     - 高等数学II: FirstYear_2/Calculus.md
     - 大学物理下: FirstYear_2/CollegePhysics.md
-    - 程序设计II: FirstYear_2/Programming.md
     - 数字电路: FirstYear_2/DigitalCircuitsAndLogicDesign.md
     - 大学物理实验: FirstYear_2/PhysicsLab.md
   - 大二上学期:
