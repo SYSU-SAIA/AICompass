@@ -14,7 +14,7 @@
 
 ## 优质学习资源
 
-1. **丘维声：**[B站链接](bilibili.com/video/BV1jR4y1M78W/?spm_id_from=333.1387.homepage.video_card.click)。
+1. **丘维声：**[B站链接](https://bilibili.com/video/BV1jR4y1M78W/?spm_id_from=333.1387.homepage.video_card.click)。
    1. 丘老讲课由浅入深，在学生中广受好评。
    2. 值得注意的是：由于 高等代数 != 线性代数 ，所以会出现很多内容超出考纲范围（但是在下学期的高等代数选修课中会出现），这里根据兴趣和需要自行选择。
 2. **未竟之美（Left Undone）**：[链接](https://365.kdocs.cn/l/cjPwWit5ziMr)
