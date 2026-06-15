@@ -1,5 +1,12 @@
-# MkDocs 构建目录
+# Node.js
+node_modules/
+
+# MkDocs 构建目录（旧）
 site/
+
+# VitePress 构建输出
+docs/.vitepress/dist/
+docs/.vitepress/cache/
 
 # Python 虚拟环境
 venv/

@@ -1,0 +1,864 @@
+/* ═══════════════════════════════════════════════════════════════
+   AICompass Design System v2.0
+   "Digital Scholarly" — 数字书院
+   中山大学人工智能学院课程资源共享平台
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ===== Design Tokens: Light Mode ===== */
+:root {
+  /* ── Color Palette ── */
+  /* Indigo: depth, intelligence, scholarship */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+
+  /* Amber: warmth, energy, desk lamp glow */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  /* Stone: warm scholarly neutrals */
+  --color-surface: #fafaf8;
+  --color-surface-raised: #ffffff;
+  --color-surface-subtle: #f3f2ef;
+  --color-border: #e7e5e2;
+  --color-border-light: #f0eeeb;
+  --color-text: #1c1917;
+  --color-text-secondary: #57534e;
+  --color-text-tertiary: #a8a29e;
+
+  /* ── Typography ── */
+  --font-display: 'Inter', 'Noto Serif SC', 'PingFang SC', sans-serif;
+  --font-body: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --font-ui: 'Inter', 'PingFang SC', system-ui, sans-serif;
+
+  --text-hero: clamp(2.8rem, 6vw, 4.5rem);
+  --text-h1: clamp(1.6rem, 2.5vw, 2.25rem);
+  --text-h2: clamp(1.25rem, 1.8vw, 1.6rem);
+  --text-h3: 1.15rem;
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+  --text-xs: 0.75rem;
+
+  --leading-display: 1.1;
+  --leading-heading: 1.35;
+  --leading-body: 1.9;
+  --leading-relaxed: 2.1;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-6: 1.5rem; --space-8: 2rem;
+  --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+  --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
+
+  /* ── Radius ── */
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px;
+  --radius-xl: 16px; --radius-2xl: 24px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 40px rgba(79,70,229,0.12);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* ── Layout ── */
+  --sidebar-width: 260px;
+  --content-max-width: 780px;
+}
+
+/* ===== Dark Mode ===== */
+:root.dark {
+  --color-surface: #0c0e14;
+  --color-surface-raised: #141720;
+  --color-surface-subtle: #181b26;
+  --color-border: #232733;
+  --color-border-light: #1c1f2a;
+  --color-text: #e4e4e7;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #63636b;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 60px rgba(99,102,241,0.15);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VITEPRESS OVERRIDES
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --vp-c-brand-1: var(--color-primary-600);
+  --vp-c-brand-2: var(--color-primary-500);
+  --vp-c-brand-3: var(--color-primary-400);
+  --vp-c-brand-soft: var(--color-primary-50);
+  --vp-c-text-1: var(--color-text);
+  --vp-c-text-2: var(--color-text-secondary);
+  --vp-c-text-3: var(--color-text-tertiary);
+  --vp-c-bg: var(--color-surface);
+  --vp-c-bg-soft: var(--color-surface-subtle);
+  --vp-c-bg-alt: var(--color-surface-raised);
+  --vp-c-bg-elv: var(--color-surface-raised);
+  --vp-c-border: var(--color-border);
+  --vp-c-divider: var(--color-border-light);
+  --vp-c-gutter: var(--color-surface-subtle);
+  --vp-font-family-base: 'Inter', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: var(--font-mono);
+  --vp-code-font-size: 0.88em;
+  --vp-sidebar-width: 272px;
+}
+
+:root.dark {
+  --vp-c-brand-1: var(--color-primary-400);
+  --vp-c-brand-2: var(--color-primary-500);
+  --vp-c-brand-soft: rgba(99,102,241,0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL
+   ═══════════════════════════════════════════════════════════════ */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+:root.dark ::selection {
+  background: var(--color-primary-800);
+  color: var(--color-primary-100);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOP NAVBAR
+   ═══════════════════════════════════════════════════════════════ */
+.VPNav {
+  border-bottom: 1px solid var(--color-border-light) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(250,250,248,0.82) !important;
+}
+:root.dark .VPNav {
+  background: rgba(12,14,20,0.82) !important;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SIDEBAR — THE COURSE BROWSER
+   ═══════════════════════════════════════════════════════════════ */
+.VPSidebar {
+  background: var(--color-surface-subtle) !important;
+  border-right: 1px solid var(--color-border-light) !important;
+  padding-top: var(--nav-height, 3.5rem) !important;
+}
+
+/* Ensure sidebar scrolls past the fixed navbar */
+.VPSidebar .group {
+  scroll-margin-top: calc(var(--nav-height, 3.5rem) + 1rem);
+}
+
+/* Sidebar group headers (semester names) */
+.VPSidebarItem.level-0 .text {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text-secondary);
+  padding: 6px 12px;
+  margin-bottom: 2px;
+}
+
+/* Sidebar links (course names) */
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.is-link .text {
+  font-size: 0.8125rem;
+  font-weight: 450;
+  color: var(--color-text-secondary);
+}
+
+.VPSidebarItem.level-1 .link,
+.VPSidebarItem.is-link .link {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  margin: 0 8px;
+  line-height: 1.5;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.VPSidebarItem.level-1 .link:hover,
+.VPSidebarItem.is-link .link:hover,
+.VPSidebarItem.level-1.is-link > .item > .link:hover .text {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+:root.dark .VPSidebarItem.level-1 .link:hover,
+:root.dark .VPSidebarItem.is-link .link:hover {
+  background: rgba(99,102,241,0.08);
+  color: var(--color-primary-300);
+}
+
+/* Active course link */
+.VPSidebarItem.level-1.is-active .link,
+.VPSidebarItem.level-1.is-active .link .text,
+.VPSidebarItem.is-link.is-active .link,
+.VPSidebarItem.is-link.is-active .link .text,
+.VPSidebarItem.level-1 .link.active,
+.VPSidebarItem.level-1 .link.active .text {
+  background: var(--color-primary-600) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.2);
+}
+:root.dark .VPSidebarItem.level-1.is-active .link,
+:root.dark .VPSidebarItem.level-1.is-active .link .text,
+:root.dark .VPSidebarItem.is-link.is-active .link,
+:root.dark .VPSidebarItem.is-link.is-active .link .text {
+  background: var(--color-primary-600) !important;
+  color: white !important;
+}
+
+/* Collapse indicator */
+.VPSidebarItem .caret {
+  color: var(--color-text-tertiary);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOMEPAGE HERO
+   ═══════════════════════════════════════════════════════════════ */
+.VPHero {
+  padding: 14vh 8vw 12vh !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft radial gradients */
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: -20%;
+  width: 140%; height: 160%;
+  background:
+    radial-gradient(ellipse 50% 40% at 45% 30%, rgba(79,70,229,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 75% 10%, rgba(245,158,11,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 35% at 20% 70%, rgba(79,70,229,0.03) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+/* Dot grid */
+.VPHero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(var(--color-border) 0.5px, transparent 0.5px);
+  background-size: 28px 28px;
+  opacity: 0.3;
+  pointer-events: none; z-index: 0;
+}
+
+.VPHero .container {
+  position: relative; z-index: 1;
+}
+
+/* Logo — smaller and subtler */
+.VPHero .image-container {
+  filter: drop-shadow(0 16px 32px rgba(79,70,229,0.15));
+  transform: scale(0.7);
+}
+
+.VPHero .image-container .VPImage {
+  width: 96px !important;
+  height: 96px !important;
+}
+
+/* Title — bigger, bolder */
+.VPHero .name {
+  font-size: clamp(3.5rem, 8vw, 6rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.0 !important;
+  background: linear-gradient(135deg,
+    var(--color-primary-700) 0%,
+    var(--color-primary-500) 30%,
+    var(--color-accent-500) 70%,
+    var(--color-accent-300) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: heroShimmer 4s ease-in-out infinite;
+}
+
+@keyframes heroShimmer {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.1) saturate(1.06); }
+}
+
+:root.dark .VPHero .name {
+  background: linear-gradient(135deg,
+    var(--color-primary-200) 0%,
+    var(--color-primary-400) 30%,
+    var(--color-accent-300) 70%,
+    var(--color-accent-200) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.VPHero .text {
+  font-size: clamp(1rem, 2vw, 1.35rem) !important;
+  font-weight: 600 !important;
+  color: var(--color-text) !important;
+  letter-spacing: 0 !important;
+  margin-top: var(--space-3) !important;
+  opacity: 0.85;
+}
+
+.VPHero .tagline {
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem) !important;
+  color: var(--color-text-secondary) !important;
+  letter-spacing: 0.02em !important;
+  margin-top: var(--space-3) !important;
+  font-weight: 400;
+}
+
+/* Action buttons — refined */
+.VPHero .actions {
+  gap: var(--space-4) !important;
+  margin-top: var(--space-10) !important;
+}
+
+.VPHero .actions .VPButton {
+  border-radius: var(--radius-full) !important;
+  padding: 0.6rem 2rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 550 !important;
+  transition: all var(--duration-normal) var(--ease-spring) !important;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+}
+
+.VPHero .actions .VPButton.brand {
+  background: var(--color-primary-600) !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: 0 4px 20px rgba(79,70,229,0.3) !important;
+}
+
+.VPHero .actions .VPButton.brand:hover {
+  background: var(--color-primary-500) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(79,70,229,0.4) !important;
+}
+
+.VPHero .actions .VPButton.alt {
+  border: 1.5px solid var(--color-border-strong) !important;
+  background: rgba(255,255,255,0.6) !important;
+  color: var(--color-text) !important;
+}
+:root.dark .VPHero .actions .VPButton.alt {
+  background: rgba(255,255,255,0.04) !important;
+}
+
+.VPHero .actions .VPButton.alt:hover {
+  border-color: var(--color-primary-300) !important;
+  color: var(--color-primary-600) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+  background: var(--color-surface-raised) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FEATURES SECTION (homepage)
+   ═══════════════════════════════════════════════════════════════ */
+.VPFeatures {
+  padding: var(--space-8) var(--space-8) var(--space-20) !important;
+  background: var(--color-surface) !important;
+}
+
+.VPFeatures .container {
+  max-width: 1200px !important;
+  gap: var(--space-5) !important;
+}
+
+.VPFeature {
+  border-radius: var(--radius-xl) !important;
+  background: var(--color-surface-raised) !important;
+  border: 1px solid var(--color-border-light) !important;
+  padding: var(--space-6) var(--space-6) !important;
+  transition: all var(--duration-normal) var(--ease-out) !important;
+  box-shadow: var(--shadow-xs) !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-primary-200);
+}
+
+:root.dark .VPFeature:hover {
+  border-color: rgba(99,102,241,0.3);
+}
+
+.VPFeature .icon {
+  font-size: 1.75rem !important;
+  margin-bottom: var(--space-3) !important;
+}
+
+.VPFeature .title {
+  font-size: var(--text-h3) !important;
+  font-weight: 700 !important;
+  font-family: var(--font-display) !important;
+  color: var(--color-text) !important;
+}
+
+.VPFeature .details {
+  color: var(--color-text-secondary) !important;
+  line-height: var(--leading-relaxed) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CUSTOM COURSE NAVIGATION CARDS
+   ═══════════════════════════════════════════════════════════════ */
+.section-header {
+  text-align: center;
+  padding: var(--space-12) 0 var(--space-8);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  border: none;
+  padding: 0;
+  margin: 0;
+  -webkit-text-fill-color: currentColor;
+  background: none;
+}
+
+.section-header p {
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-4);
+  padding: 0 0 var(--space-16);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  text-decoration: none !important;
+  color: var(--color-text) !important;
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Top accent bar — reveals on hover */
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent-400));
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-primary-200);
+}
+
+.course-card:hover::before {
+  opacity: 1;
+}
+
+.course-card .semester-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+:root.dark .course-card .semester-tag {
+  color: var(--color-primary-300);
+  background: rgba(99,102,241,0.12);
+}
+
+.course-card .course-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: var(--leading-heading);
+  color: var(--color-text);
+}
+
+.course-card .course-list {
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTENT PAGES (course detail)
+   ═══════════════════════════════════════════════════════════════ */
+.vp-doc h1 {
+  font-size: var(--text-h1);
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: var(--leading-display);
+  margin-bottom: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root.dark .vp-doc h1 {
+  background: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.vp-doc h2 {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  line-height: var(--leading-heading);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1.5px solid var(--color-border-light);
+  color: var(--color-text);
+}
+
+.vp-doc h3 {
+  font-size: var(--text-h3);
+  font-weight: 650;
+  font-family: var(--font-display);
+  line-height: var(--leading-heading);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.vp-doc p {
+  margin: var(--space-4) 0;
+  line-height: var(--leading-body);
+}
+
+.vp-doc a {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+:root.dark .vp-doc a {
+  color: var(--color-primary-400);
+}
+
+.vp-doc a:hover {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+}
+
+/* ── Inline code ── */
+.vp-doc :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--color-surface-subtle);
+  color: var(--color-primary-700);
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light);
+  font-weight: 500;
+}
+:root.dark .vp-doc :not(pre) > code {
+  color: var(--color-primary-300);
+  background: rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.15);
+}
+
+/* ── Code blocks ── */
+.vp-doc div[class*='language-'] {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin: var(--space-6) 0;
+}
+
+/* ── Blockquotes ── */
+.vp-doc blockquote {
+  border-left: 3px solid var(--color-primary-400);
+  background: var(--color-primary-50);
+  padding: var(--space-4) var(--space-6);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--space-6) 0;
+  color: var(--color-text);
+}
+:root.dark .vp-doc blockquote {
+  background: rgba(99,102,241,0.06);
+  border-left-color: var(--color-primary-500);
+}
+
+/* ── Tables ── */
+.vp-doc table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin: var(--space-6) 0;
+}
+
+.vp-doc th {
+  background: var(--color-primary-600);
+  color: white;
+  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  padding: var(--space-3) var(--space-4);
+}
+
+.vp-doc td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-surface-raised);
+  font-size: var(--text-body);
+}
+
+.vp-doc tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Lists ── */
+.vp-doc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vp-doc ul li {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
+}
+
+.vp-doc ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.15em;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-primary-400);
+}
+
+.vp-doc ol {
+  counter-reset: item;
+  list-style: none;
+  padding-left: 0;
+}
+
+.vp-doc ol li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 1.8em;
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
+}
+
+.vp-doc ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0; top: 0.15em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  width: 1.4em; height: 1.4em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:root.dark .vp-doc ol li::before {
+  color: var(--color-primary-300);
+  background: rgba(99,102,241,0.1);
+}
+
+/* ── Strong / bold ── */
+.vp-doc strong {
+  color: var(--color-primary-700);
+  font-weight: 700;
+}
+:root.dark .vp-doc strong {
+  color: var(--color-primary-300);
+}
+
+/* ── Horizontal rule ── */
+.vp-doc hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
+  margin: var(--space-12) 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RIGHT OUTLINE (TOC)
+   ═══════════════════════════════════════════════════════════════ */
+.VPDocAsideOutline .content {
+  border-left: 1px solid var(--color-border-light) !important;
+}
+
+.VPDocAsideOutline .outline-link {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 3px var(--space-2) !important;
+  transition: all var(--duration-fast) var(--ease-out) !important;
+}
+
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--color-primary-600) !important;
+  background: var(--color-primary-50) !important;
+}
+
+.VPDocAsideOutline .outline-link.active {
+  color: var(--color-primary-700) !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+.VPFooter {
+  border-top: 1px solid var(--color-border-light) !important;
+  background: var(--color-surface-subtle) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.VPHero .name  { animation: fade-up 0.5s var(--ease-out) both, heroShimmer 4s ease-in-out infinite 0.5s; }
+.VPHero .text  { animation: fade-up 0.5s var(--ease-out) 0.08s both; }
+.VPHero .tagline { animation: fade-up 0.5s var(--ease-out) 0.14s both; }
+.VPHero .actions { animation: fade-up 0.5s var(--ease-out) 0.2s both; }
+
+.VPFeature:nth-child(1) { animation: fade-up 0.4s var(--ease-out) 0.05s both; }
+.VPFeature:nth-child(2) { animation: fade-up 0.4s var(--ease-out) 0.1s both; }
+.VPFeature:nth-child(3) { animation: fade-up 0.4s var(--ease-out) 0.15s both; }
+.VPFeature:nth-child(4) { animation: fade-up 0.4s var(--ease-out) 0.2s both; }
+.VPFeature:nth-child(5) { animation: fade-up 0.4s var(--ease-out) 0.25s both; }
+.VPFeature:nth-child(6) { animation: fade-up 0.4s var(--ease-out) 0.3s both; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  :root { --text-body: 1rem; }
+  .VPHero { padding: var(--space-12) var(--space-4) var(--space-10) !important; }
+  .course-grid { grid-template-columns: 1fr; padding: 0 var(--space-4) var(--space-12); }
+}
+
+@media (max-width: 640px) {
+  .VPHero .name { font-size: 2rem !important; }
+  .VPHero .text { font-size: 1rem !important; }
+  .VPHero .tagline { font-size: 0.9rem !important; }
+  .VPHero .actions { flex-direction: column; align-items: stretch; }
+  .VPFeature { padding: var(--space-4) !important; }
+  .section-header h2 { font-size: 1.4rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-tertiary); }
+
+/* ═══════════════════════════════════════════════════════════════
+   FOCUS
+   ═══════════════════════════════════════════════════════════════ */
+:focus-visible {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media print {
+  .VPNav, .VPSidebar, .VPDocAside, .VPFooter { display: none !important; }
+}

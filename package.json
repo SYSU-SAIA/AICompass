@@ -1,0 +1,15 @@
+{
+  "name": "aicompass",
+  "version": "2.0.0",
+  "description": "中山大学人工智能学院课程资源共享平台",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.0",
+    "vue": "^3.5.0"
+  }
+}

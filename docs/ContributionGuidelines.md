@@ -36,7 +36,7 @@
 在开始之前，请确保您的电脑已经安装了以下软件：
 
   - **Git**: 一个版本控制系统，用于下载和管理项目代码。
-  - **Python**: 本项目基于 Python 构建。请确保您的 Python 版本在 3.8 或以上。
+  - **Node.js**: 本项目基于 Node.js 构建。请确保您的 Node.js 版本在 18 或以上（推荐 20+）。
 
 ### 步骤 2：克隆项目仓库
 
@@ -55,54 +55,32 @@ git clone https://github.com/Your-GitHub-Username/AICompass.git
 cd AICompass
 ```
 
-### 步骤 3：创建并激活 Python 虚拟环境
+### 步骤 3：安装项目依赖
 
-为了不污染您全局的 Python 环境，我们推荐使用虚拟环境。
+本项目使用 npm（Node.js 包管理器）管理依赖。执行以下命令来安装它们：
 
 ```bash
-# 创建一个名为 venv 的虚拟环境
-python -m venv venv
+npm install
 ```
 
-然后，激活这个虚拟环境：
+### 步骤 4：在本地运行网站
 
-  - 在 **Windows** 上：
-    ```bash
-    .\venv\Scripts\activate
-    ```
-  - 在 **macOS** 或 **Linux** 上：
-    ```bash
-    source venv/bin/activate
-    ```
-
-激活成功后，您会看到命令行提示符前面出现了 `(venv)` 字样。
-
-### 步骤 4：安装项目依赖
-
-项目所需的 Python 包都记录在 `requirements.txt` 文件中。执行以下命令来安装它们：
+一切就绪！现在，启动 VitePress 的开发服务器：
 
 ```bash
-pip install -r requirements.txt
-```
-
-### 步骤 5：在本地运行网站
-
-一切就绪！现在，启动 MkDocs 的开发服务器：
-
-```bash
-mkdocs serve
+npm run dev
 ```
 
 您会看到类似下面的输出：
 
 ```
-INFO    -  Building documentation...
-INFO    -  Cleaning site directory
-INFO    -  Documentation built in 0.29 seconds
-INFO    -  [12:34:56] Serving on http://127.0.0.1:8000/
+  vitepress v1.6.4
+
+  ➜  Local:   localhost:5173/
+  ➜  Network: use --host to expose
 ```
 
-现在，打开您的浏览器，访问 **[http://127.0.0.1:8000](http://127.0.0.1:8000)**，您就可以看到和线上完全一样的网站了！并且，当您修改并保存文件时，网页会自动刷新，非常方便。
+现在，打开您的浏览器，访问终端显示的本地地址（通常是 `localhost:5173`），您就可以看到和线上完全一样的网站了！并且，当您修改并保存文件时，网页会自动刷新（热更新），非常方便。
 
 -----
 
@@ -142,33 +120,44 @@ INFO    -  [12:34:56] Serving on http://127.0.0.1:8000/
 
 **3. 更新网站导航栏**
 
-为了让用户能在网站的导航栏中找到您新添加的页面，您需要修改根目录下的 `mkdocs.yml` 文件。
+为了让用户能在网站的侧边栏导航中找到您新添加的页面，您需要修改 `.vitepress/config.mts` 文件。
 
-  - 打开 `mkdocs.yml` 文件。
-  - 找到 `nav:` 配置部分。
+  - 打开 `.vitepress/config.mts` 文件。
+  - 找到 `sidebar:` 配置部分。
   - 在对应的学期列表下，添加新的一行。
 
 修改前：
 
-```yaml
-nav:
-  # ... 其他导航 ...
-  - 大三下学期:
-    - TODO
+```typescript
+'/ThirdYear_2/': [
+  {
+    text: '大三下学期',
+    collapsed: false,
+    items: [
+      { text: '智能机器人', link: '/ThirdYear_2/Robotics' },
+    ]
+  }
+],
 ```
 
 修改后：
 
-```yaml
-nav:
-  # ... 其他导航 ...
-  - 大三下学期:
-    - 深度学习: ThirdYear_2/DeepLearning.md # 新增此行
+```typescript
+'/ThirdYear_2/': [
+  {
+    text: '大三下学期',
+    collapsed: false,
+    items: [
+      { text: '智能机器人', link: '/ThirdYear_2/Robotics' },
+      { text: '深度学习', link: '/ThirdYear_2/DeepLearning' }, // 新增此行
+    ]
+  }
+],
 ```
 
-> **注意**：`- 深度学习:` 是显示在网站导航上的名称，`ThirdYear_2/DeepLearning.md` 是文件的实际路径。
+> **注意**：`text: '深度学习'` 是显示在侧边栏上的名称，`link: '/ThirdYear_2/DeepLearning'` 是文件的实际路径（省略 `.md` 后缀）。
 
-保存 `mkdocs.yml` 文件后，本地开发服务器会自动重新构建网站。刷新您的浏览器，就能在导航栏看到新的课程链接了！
+保存 `.vitepress/config.mts` 文件后，本地开发服务器会自动重新构建网站。刷新您的浏览器，就能在侧边栏看到新的课程链接了！
 
 ### 如何分享文件（使用WPS云文档）
 
@@ -201,8 +190,8 @@ nav:
 例如：
 
 ```markdown
-- [深度学习复习笔记下载](https://kdocs.cn/l/abcdefg12345)
-- [历年考题打包下载 (ZIP)](https://kdocs.cn/l/hijklmn67890)
+- `[深度学习复习笔记下载](您的WPS分享链接)`
+- `[历年考题打包下载 (ZIP)](您的WPS分享链接)`
 ```
 
 这样，访问者点击链接就可以直接查看或下载您分享的文件了。
