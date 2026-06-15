@@ -6,6 +6,7 @@ PLAN.md
 
 # 依赖
 node_modules/
+package-lock.json
 
 # Serverless Devs 本地缓存
 .s/
