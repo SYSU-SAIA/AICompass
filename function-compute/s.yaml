@@ -1,0 +1,46 @@
+# AICompass 贡献处理函数 - Serverless Devs 部署配置
+# 部署命令: s deploy
+
+edition: 3.0.0
+name: aicompass-fc
+access: default
+
+resources:
+  aicompass-contribution:
+    component: fc3
+    props:
+      region: cn-shenzhen
+      functionName: aicompass-contribution
+      description: AICompass 贡献系统 — OSS签名 + 表单接收 + GitHub PR
+      runtime: nodejs20
+      code: ./src
+      handler: index.handler
+      memorySize: 512
+      timeout: 120
+      cpu: 0.5
+      diskSize: 512
+      instanceConcurrency: 10
+
+      environmentVariables:
+        # 简易鉴权（前端请求需带 X-Auth-Token header）
+        SHARED_SECRET: ${env(SHARED_SECRET)}
+        # OSS 配置（用于生成前端直传签名）
+        OSS_REGION: ${env(OSS_REGION)}
+        OSS_BUCKET: ${env(OSS_BUCKET)}
+        OSS_ACCESS_KEY_ID: ${env(OSS_ACCESS_KEY_ID)}
+        OSS_ACCESS_KEY_SECRET: ${env(OSS_ACCESS_KEY_SECRET)}
+        # GitHub App 认证（用于以 Bot 身份自动创建 PR）
+        GITHUB_APP_ID: ${env(GITHUB_APP_ID)}
+        GITHUB_APP_PRIVATE_KEY: ${env(GITHUB_APP_PRIVATE_KEY)}
+        GITHUB_APP_INSTALLATION_ID: ${env(GITHUB_APP_INSTALLATION_ID)}
+        GITHUB_OWNER: ${env(GITHUB_OWNER)}
+        GITHUB_REPO: ${env(GITHUB_REPO)}
+
+      triggers:
+        - triggerName: http
+          triggerType: http
+          triggerConfig:
+            methods:
+              - POST
+              - OPTIONS
+            authType: anonymous

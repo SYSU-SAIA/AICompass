@@ -34,13 +34,27 @@ export default defineConfig({
           { text: '实习就业指南', link: '/Work/' },
         ]
       },
-      { text: '贡献指南', link: '/ContributionGuidelines' },
+      {
+        text: '参与贡献',
+        items: [
+          { text: '贡献指南', link: '/ContributionGuidelines' },
+          { text: '提交贡献', link: '/contribute' },
+        ]
+      },
       { text: '致谢 & 友链', link: '/important-source' },
     ],
 
     // Sidebar - global course navigation visible from all pages
     sidebar: {
       '/': [
+      {
+        text: '📤 参与贡献',
+        collapsed: false,
+        items: [
+          { text: '提交贡献', link: '/contribute' },
+          { text: '贡献指南', link: '/ContributionGuidelines' },
+        ]
+      },
       {
         text: '📘 大一上学期',
         collapsed: false,

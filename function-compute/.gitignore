@@ -1,0 +1,15 @@
+# 环境变量（含密钥，绝对不能提交）
+.env
+
+# 实施方案文档（仅本地参考）
+PLAN.md
+
+# 依赖
+node_modules/
+
+# Serverless Devs 本地缓存
+.s/
+
+# 本地测试/一次性脚本
+src/verify-keys.js
+src/setup-oss-cors.js

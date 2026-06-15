@@ -562,7 +562,19 @@ body {
 /* ═══════════════════════════════════════════════════════════════
    CONTENT PAGES (course detail)
    ═══════════════════════════════════════════════════════════════ */
-.vp-doc h1 {
+
+/* VPPage (layout: page) — 补上 .vp-doc 级别的间距 */
+.VPPage {
+  padding: 32px 24px 96px;
+}
+.VPPage > div {
+  max-width: var(--content-max-width, 780px);
+  margin: 0 auto;
+}
+
+.vp-doc h1,
+.VPPage h1,
+.VPDoc h1 {
   font-size: var(--text-h1);
   font-weight: 800;
   font-family: var(--font-display);
@@ -575,7 +587,9 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-:root.dark .vp-doc h1 {
+:root.dark .vp-doc h1,
+:root.dark .VPPage h1,
+:root.dark .VPDoc h1 {
   background: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
   -webkit-background-clip: text;
   background-clip: text;

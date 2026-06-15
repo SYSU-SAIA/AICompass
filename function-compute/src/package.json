@@ -1,0 +1,11 @@
+{
+  "name": "aicompass-contribution-handler",
+  "version": "1.0.0",
+  "description": "AICompass 贡献处理函数 — 接收表单提交 → OSS签名 → 通义千问润色 → GitHub PR",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@octokit/auth-app": "^6.1.0",
+    "@octokit/rest": "^20.0.0"
+  }
+}

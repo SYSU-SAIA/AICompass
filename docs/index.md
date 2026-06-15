@@ -14,9 +14,9 @@ hero:
       text: 浏览课程
       link: /FirstYear_1/Calculus
     - theme: alt
-      text: 参与贡献
-      link: /ContributionGuidelines
+      text: 提交贡献
+      link: /contribute
     - theme: alt
-      text: 科研指南
-      link: /ResearcherGuide/
+      text: 贡献指南
+      link: /ContributionGuidelines
 ---
